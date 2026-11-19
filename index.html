@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel Korat</title>
+<meta name="description" content="Daniel Korat, Principal Engineer for AI optimization at Microsoft: efficient LLM inference, speculative decoding and AI agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  Sources for every figure on this page:
+  job-search/materials/linkedin_bio.txt, short-bio.md, portfolio-index.md, CV/Daniel_Korat_CV_Jul_26.tex
+  (from the 18 Nov 2026 backup), and linkedin.com/in/korat Experience section read 19 Nov 2026. Photo: github.com/danielkorat avatar (interim until LinkedIn photo).
+-->
+<style>
+/* ---------- shared base ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:var(--body-size)/1.65 var(--body-font);transition:background .25s,color .25s}
+a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid transparent}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:600;text-decoration:none;letter-spacing:var(--brand-track)}
+nav a{text-decoration:none;margin-left:22px;color:var(--muted);font-size:.92rem}
+nav a:hover{color:var(--ink)}
+.icon-btn{background:none;border:1px solid var(--rule);color:var(--muted);border-radius:999px;width:32px;height:32px;margin-left:18px;cursor:pointer;font-size:14px}
+.hero{display:grid;grid-template-columns:1fr 168px;gap:40px;align-items:center;padding:72px 0 48px}
+.hero img{width:168px;height:168px;object-fit:cover;border-radius:var(--photo-radius);filter:var(--photo-filter)}
+.kicker{color:var(--accent);font:var(--kicker-font);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+h1{font:var(--h1-font);letter-spacing:-.015em;margin-bottom:20px}
+.lede{color:var(--soft);max-width:36em}
+.links{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.92rem}
+.links a{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:8px 0 8px}
+.stat{padding:22px 16px 20px 0}
+.stat b{display:block;font:var(--stat-font);color:var(--ink)}
+.stat span{font-size:.84rem;color:var(--muted);line-height:1.4;display:block;margin-top:4px}
+section{padding:56px 0 8px}
+h2{font:var(--h2-font);margin-bottom:28px;display:flex;align-items:baseline;gap:14px}
+h2 .num{font:var(--num-font);color:var(--accent)}
+.work{display:grid;gap:0}
+.item{display:grid;grid-template-columns:var(--item-cols);gap:24px;padding:22px 0;border-top:1px solid var(--rule)}
+.item:last-child{border-bottom:1px solid var(--rule)}
+.item .meta{font:var(--meta-font);color:var(--muted);padding-top:3px}
+.item h3{font:var(--h3-font);margin-bottom:6px}
+.item p{color:var(--soft);font-size:.96rem}
+.item .refs{margin-top:8px;font-size:.86rem;display:flex;flex-wrap:wrap;gap:4px 14px}
+.item .refs a{color:var(--muted)}
+.pubs li{list-style:none;display:grid;grid-template-columns:var(--item-cols);gap:24px;padding:12px 0;border-top:1px dotted var(--rule)}
+.pubs .venue{font:var(--meta-font);color:var(--muted)}
+.pubs .venue em{font-style:normal;color:var(--accent)}
+.pubs a{text-decoration:none}
+.pubs a:hover{text-decoration:underline}
+.pubs .authors{display:block;color:var(--muted);font-size:.86rem}
+.more{margin-top:18px;font-size:.92rem}
+.cv{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cv h4{font:var(--meta-font);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px;font-weight:500}
+.cv p{margin-bottom:10px;font-size:.95rem}
+.cv small{color:var(--muted);font-size:.85rem;display:block}
+footer{margin-top:72px;padding:28px 0 48px;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* ---------- A: Editorial ---------- */
+:root{
+  --bg:#f6f2ea;--ink:#1f1c18;--soft:#3d3832;--muted:#7a7166;--rule:#ddd4c6;--accent:#9b3d27;
+  --measure:760px;--body-font:"Inter",system-ui,sans-serif;--body-size:17px;--brand-track:0;
+  --h1-font:500 clamp(2.1rem,5vw,3.1rem)/1.12 "Fraunces",Georgia,serif;
+  --h2-font:500 1.7rem/1.2 "Fraunces",Georgia,serif;
+  --h3-font:500 1.22rem/1.3 "Fraunces",Georgia,serif;
+  --stat-font:500 2rem/1.1 "Fraunces",Georgia,serif;
+  --num-font:italic 400 1rem/1 "Fraunces",Georgia,serif;
+  --kicker-font:600 .74rem/1 "Inter",sans-serif;
+  --meta-font:400 .86rem/1.4 "Inter",sans-serif;
+  --item-cols:110px 1fr;--photo-radius:50%;--photo-filter:sepia(.12) saturate(.9);
+}
+:root[data-theme=dark]{--bg:#17150f;--ink:#efe9dd;--soft:#cfc7b8;--muted:#9a9184;--rule:#36322a;--accent:#e2906f;--photo-filter:sepia(.1) saturate(.85) brightness(.92)}
+.brand{font-family:"Fraunces",serif;font-size:1.15rem;font-weight:500}
+
+/* ---------- phones ---------- */
+@media (max-width:640px){
+  nav a:not(:last-of-type){display:none}
+  .hero{grid-template-columns:1fr;padding-top:40px;gap:24px}
+  .hero img{width:112px;height:112px;order:-1}
+  .stats{grid-template-columns:1fr 1fr}
+  .item,.pubs li{grid-template-columns:1fr;gap:4px}
+  .cv{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Daniel Korat</a>
+  <div style="display:flex;align-items:center">
+    <nav><a href="#work">Work</a><a href="#papers">Papers</a><a href="#about">Background</a><a href="#contact">Contact</a></nav>
+    <button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="kicker">Principal Engineer, AI Optimization · Microsoft</p>
+      <h1>I make language models, and the agents built on them, cheaper to run.</h1>
+      <p class="lede">I'm a Principal Software Engineer in Microsoft's AI Frameworks group, optimizing AI models for Microsoft's AI accelerators. Before that I spent eleven years at Intel on efficient NLP, LLM inference and AI agents: speculative decoding, few-shot learning and test-time compute, from first prototype to code merged into Hugging Face Transformers and vLLM.</p>
+      <p class="links">
+        <a href="https://scholar.google.com/citations?user=vOrCEQgAAAAJ&hl=en">Google Scholar</a>
+        <a href="https://github.com/danielkorat">GitHub</a>
+        <a href="https://huggingface.co/danielkorat">Hugging Face</a>
+        <a href="https://www.linkedin.com/in/korat">LinkedIn</a>
+        <a href="#" title="CV PDF to be added">CV (PDF)</a>
+      </p>
+    </div>
+    <img src="img/portrait.jpg" alt="Portrait of Daniel Korat" width="168" height="168">
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>2.8×</b><span>lossless LLM speedup from speculative decoding</span></div>
+    <div class="stat"><b>2M+</b><span>SetFit downloads a year</span></div>
+    <div class="stat"><b>11</b><span>papers at top-tier AI/ML venues</span></div>
+    <div class="stat"><b>24%</b><span>lower coding-agent operating cost at equal latency</span></div>
+  </div>
+
+  <section id="work">
+    <h2><span class="num">01</span>Selected work</h2>
+    <div class="work">
+      <article class="item">
+        <div class="meta">2023–2025<br>Inference</div>
+        <div>
+          <h3>Speculative decoding with any assistant model</h3>
+          <p>Co-developed three methods, Dynamic Speculation Lookahead, Universal Assisted Generation and Token-Level Intersection, merged into Hugging Face Transformers; Token-Level Intersection is also in vLLM, where it is the only cross-tokenizer drafting path. Up to 2.8× faster generation with no change in output. First author on Universal Assisted Generation, which lets a small model draft for a large one even when their tokenizers differ.</p>
+          <p class="refs"><a href="https://arxiv.org/abs/2502.05202">ICML 2025 paper</a><a href="https://huggingface.co/blog/universal_assisted_generation">HF blog: Universal</a><a href="https://huggingface.co/blog/dynamic_speculation_lookahead">HF blog: Dynamic</a><a href="https://huggingface.co/blog/jmamou/uag-tli">HF blog: TLI</a></p>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">2025–2026<br>Agents</div>
+        <div>
+          <h3>Cost-efficient AI agents</h3>
+          <p>Built and shipped a Claude Code plugin in which a frontier model hands work to a local specialist model served on commodity CPU servers: up to 24% lower operating cost than cloud-only, at equal latency. Built a deep-research agent that runs fully on-premises across CPU and GPU; profiling each stage led to a redesign that cut about 51% of the tokens per query.</p>
+          <p class="refs"><a href="https://github.com/danielkorat/hybrid-deep-research">hybrid-deep-research</a></p>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">2022<br>Few-shot</div>
+        <div>
+          <h3>SetFit: few-shot text classification without prompts</h3>
+          <p>Co-created with Hugging Face: train a strong classifier from a handful of labelled examples. 2M+ downloads a year; a later 8-bit version runs 7.8× faster on CPU.</p>
+          <p class="refs"><a href="https://github.com/huggingface/setfit">GitHub</a><a href="https://arxiv.org/abs/2209.11055">Paper</a><a href="https://huggingface.co/blog/setfit-optimum-intel">HF blog: 7.8× on CPU</a></p>
+        </div>
+      </article>
+      <article class="item">
+        <div class="meta">2025<br>Test-time compute</div>
+        <div>
+          <h3>Portfolio Beam Search</h3>
+          <p>Spends a fixed test-time compute budget across several search strategies. At 16 beams it matches standard beam search at 32.</p>
+          <p class="refs"><a href="https://huggingface.co/blog/danelbaz/ttc-pbs">HF blog</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="papers">
+    <h2><span class="num">02</span>Selected papers</h2>
+    <ul class="pubs">
+      <li><span class="venue">ICML 2025 · <em>Oral</em></span><a href="https://arxiv.org/abs/2502.05202">Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies<span class="authors">Timor, Mamou, Korat, Berchansky, Jain, Pereg, Wasserblat, Harel</span></a></li>
+      <li><span class="venue">ICLR 2025</span><a href="https://arxiv.org/abs/2405.14105">Distributed Speculative Inference (DSI) of Large Language Models<span class="authors">Timor, Mamou, Korat, Berchansky, Pereg, Wasserblat, Galanti, Gordon, Harel</span></a></li>
+      <li><span class="venue">NeurIPS 2024 workshop</span><a href="https://neurips2024-enlsp.github.io/papers/paper_19.pdf">Dynamic Speculation Lookahead Accelerates Speculative Decoding</a></li>
+      <li><span class="venue">NeurIPS 2022 workshop</span><a href="https://arxiv.org/abs/2209.11055">Efficient Few-Shot Learning Without Prompts (SetFit)<span class="authors">Tunstall, Reimers, Jo, Bates, Korat, Wasserblat, Pereg</span></a></li>
+      <li><span class="venue">COLING 2020</span><a href="https://aclanthology.org/2020.coling-main.158/">Syntactically Aware Cross-Domain Aspect and Opinion Extraction<span class="authors">Pereg, Korat, Wasserblat</span></a></li>
+    </ul>
+    <p class="more"><a href="https://scholar.google.com/citations?user=vOrCEQgAAAAJ&hl=en">All 12 papers on Google Scholar →</a></p>
+  </section>
+
+  <section id="about">
+    <h2><span class="num">03</span>Background</h2>
+    <div class="cv">
+      <div>
+        <h4>Experience</h4>
+        <p>Microsoft<small>Principal AI Optimization Software Engineer · 2026–present</small></p>
+        <p>Intel<small>AI Research Engineer / Scientist · 2025–2026</small><small>Deep Learning Research Engineer · 2017–2025</small><small>Research Assistant · 2015–2017</small></p>
+        <p>Co-founder of NLP Architect, Intel's open-source NLP library. One granted U.S. patent.</p>
+      </div>
+      <div>
+        <h4>Education</h4>
+        <p>M.Sc. Computer Science, Reichman University<small>Magna Cum Laude · 2018–2022</small></p>
+        <p>B.Sc. Computer Science and Linguistics, Tel Aviv University<small>Summa Cum Laude in Linguistics · 2013–2016</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">04</span>Contact</h2>
+    <p class="lede">The best way to reach me is a message on <a href="https://www.linkedin.com/in/korat">LinkedIn</a>.</p>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Daniel Korat</span><span>Hand-built, hosted on GitHub Pages</span></div></footer>
+
+
+<script>
+const root=document.documentElement;
+try{const t=localStorage.getItem('dk-theme');if(t)root.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: dark)').matches)root.dataset.theme='dark'}catch(e){}
+document.getElementById('theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('dk-theme',root.dataset.theme)}catch(e){}};
+</script>
+</body>
+</html>
